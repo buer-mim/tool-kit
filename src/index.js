@@ -1,24 +1,17 @@
 import formatDate from "./modules/formatDate";
 import webSecurity from "./modules/webSecurity";
+import stringOperation from "./modules/stringOperation";
 
 const toolKit = {
     formatDate,
-    ...webSecurity
-};
-const a = {
-    id: 123,
-    name: '测试',
-    content: '季卡稍等哈杰卡斯点哈季卡稍等哈',
-    link: 'https://www.baidu.com/#/'
-};
-const setLocalStorage = (name, data) => {
-    localStorage.setItem(name,webSecurity.encrypt(JSON.stringify(data)));
-};
-const getLocalStorage = (name) => {
-    return JSON.parse(webSecurity.decrypt(localStorage.getItem(name)));
+    ...webSecurity,
+    ...stringOperation
 };
 
-setLocalStorage('a', a);
-console.log(getLocalStorage('a'));
+var tel = '188ABCD1331';
+console.log(stringOperation.replaceStars(tel, 0, 3));
+console.log(stringOperation.replaceStars(tel, 1, 3));
+console.log(stringOperation.replaceStars(tel, -1, 3));
+
 
 // module.exports = toolKit;
