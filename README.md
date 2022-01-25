@@ -1,5 +1,6 @@
 ## formatDate
 **日期时间格式化**<br/>
+
 *参数* <br/>
 >+ @param1 <string | number> time
 >+ @param2 <string> type
@@ -21,6 +22,7 @@
 
 ## encrypt
 **加密**<br/>
+
 *参数* <br/>
 >+ @param1 <string> data
 
@@ -32,6 +34,7 @@
 
 ## decrypt
 **解密**<br/>
+
 *参数* <br/>
 >+ @param1 <string> data
 
@@ -42,6 +45,7 @@
 
 ## strToJson
 **字符串转json**<br/>
+
 *参数* <br/>
 >+ @param1 <string> str
 
@@ -52,6 +56,7 @@
 
 ## jsonToStr
 **json转字符串**<br/>
+
 *参数* <br/>
 >+ @param1 <object> json
 
@@ -62,6 +67,7 @@
 
 ## arrRepeat
 **数组去重**<br/>
+
 *参数* <br/>
 >+ @param1 <array> arr
 >+ @param2 <...args> args 可变参数
@@ -76,6 +82,7 @@
 
 ## arrDelayer
 **树形结构扁平化**<br/>
+
 *参数* <br/>
 >+ @param1 <array> arr
 
@@ -87,6 +94,7 @@
 
 ## deepCopy
 **深复制**<br/>
+
 *参数* <br/>
 >+ @param1 <object> json
 
