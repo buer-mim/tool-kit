@@ -1,18 +1,20 @@
+import { isArr, isObject } from "./util";
+
 /**
  * @name 数组去重
  * @param 
  *   arr 待处理数组
  *   args 匹配字段数组
 */
-const arrRepeat = (arr, ...args) => {
-    if(!arr || !Array.isArray(arr)){
+export function arrRepeat(arr, ...args) {
+    if(!isArr(arr)){
         return;
     };
     const data = JSON.parse(JSON.stringify(arr));
     const map = new Map();
     if(args.length > 1){
         return data.filter((item) => {
-            if(Object.prototype.toString.call(item).toLowerCase() === "[object object]" && !item?.length){
+            if(isObject(item)){
                 const state = args.every((e) => {
                     return Object.keys(item).some((s) => {
                         return e === s;
@@ -40,8 +42,8 @@ const arrRepeat = (arr, ...args) => {
  * @param 
  *   arr 树形结构数组
 */
-const arrDelayer = (arr) => {
-    if(!arr || !Array.isArray(arr)){
+export function arrDelayer(arr) {
+    if(!isArr(arr)){
         return;
     };
     const data = JSON.parse(JSON.stringify(arr));
@@ -53,9 +55,4 @@ const arrDelayer = (arr) => {
         }, []);
     };
     return loop(data);
-};
-
-module.exports = {
-    arrRepeat,
-    arrDelayer
 };

@@ -2,7 +2,7 @@
  * @name 加密
  * @param data 待加密数据
 */
-const encrypt = (data) => {
+export function encrypt(data) {
     if(!data){
         return data;
     };
@@ -17,7 +17,7 @@ const encrypt = (data) => {
  * @name 解密
  * @param data 待解密数据
 */
-const decrypt = (data) => {
+export function decrypt(data) {
     if(!data){
         return data;
     };
@@ -26,9 +26,4 @@ const decrypt = (data) => {
       result.push((i+1)%2 === 0 ? String.fromCharCode(data.charCodeAt(i) ^ 0x7D) : arr[i]);
     };
     return result.join('');
-};
-
-module.exports = {
-    encrypt,
-    decrypt
 };

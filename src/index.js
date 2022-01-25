@@ -1,13 +1,19 @@
-import formatDate from "./modules/formatDate";
-import webSecurity from "./modules/webSecurity";
-import stringOperation from "./modules/stringOperation";
-import arrOperation from "./modules/arrOperation";
+import { formatDate } from "./modules/formatDate";
+import { encrypt, decrypt } from "./modules/webSecurity";
+import { strToJson, jsonToStr, replaceStars } from "./modules/stringOperation";
+import { arrRepeat, arrDelayer } from "./modules/arrOperation";
+import { deepCopy } from "./modules/deepCopy";
 
 const toolKit = {
     formatDate,
-    ...webSecurity,
-    ...stringOperation,
-    ...arrOperation
+    encrypt,
+    decrypt,
+    strToJson,
+    jsonToStr,
+    replaceStars,
+    arrRepeat,
+    arrDelayer,
+    deepCopy
 };
 
 // module.exports = toolKit;

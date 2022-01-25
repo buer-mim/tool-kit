@@ -11,7 +11,7 @@ const config = {
     input: 'src/index.js', // 需要打包的文件源路径
     output: {
         file: 'dist/bundle.js', // 打包后的文件夹及文件名
-        format: 'umd', // 文件的输出格式
+        format: 'es', // 文件的输出格式
         name: 'z', // 包的全局变量名称
         sourcemap: env === 'production' ? false : true
     },

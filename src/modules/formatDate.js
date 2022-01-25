@@ -1,3 +1,5 @@
+import { isStr } from "./util";
+
 /**
  * @name 日期格式化化
  * @param 
@@ -8,10 +10,10 @@
 function db(n){
     return n.toString()[1] ? n : '0' + n;
 };
-const formatDate = (data, type) => {
+export function formatDate(data, type) {
     const time = data || new Date().getTime();
     const f = !type ? "yyyy-MM-dd hh:mm:ss" : type;
-    let date = typeof time === 'string' ? new Date(time.replace(/-/g, "/")) : new Date(time);
+    let date = isStr(time) ? new Date(time.replace(/-/g, "/")) : new Date(time);
     const mode = {
         yyyy: date.getFullYear(),
         MM: db(date.getMonth() + 1),
@@ -25,5 +27,3 @@ const formatDate = (data, type) => {
     });
     return result;
 };
-
-export default formatDate;

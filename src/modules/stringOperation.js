@@ -1,11 +1,13 @@
+import { isStr, isObject } from "./util";
+
 /**
  * @name 字符串转json
  * @param 
  *  str 目标字符串
  *  tag 切割标识
 */
-const strToJson = (str, tag = '&') => {
-    if(!str){
+export function strToJson(str, tag = '&') {
+    if(!isStr(str)){
         return;
     };
     const arr = str.split(tag), result = [];
@@ -21,8 +23,8 @@ const strToJson = (str, tag = '&') => {
  *   obj 目标json对象
  *   tag 链接符
 */
-const jsonToStr = (obj, tag = '&') => {
-    if(!obj || JSON.stringify === "{}"){
+export function jsonToStr(obj, tag = '&') {
+    if(!isObject(obj)){
         return;
     };
     const arr = Object.entries(obj), result = [];
@@ -41,8 +43,8 @@ const jsonToStr = (obj, tag = '&') => {
  *   num <number> 星星数量
  *   tag 占位符号
 */
-const replaceStars = (str, start = 1, end, tag = "*", num) => {
-    if(typeof str !== "string" || !str){
+export function replaceStars(str, start = 1, end, tag = "*", num) {
+    if(!isStr(str)){
         return;
     };
     const length = str.length;
@@ -53,11 +55,4 @@ const replaceStars = (str, start = 1, end, tag = "*", num) => {
     const tagStr = new Array(len).fill(tag).join(''),
           reg = new RegExp(regTarget, "i");
     return str.replace(reg, tagStr);
-};
-
-
-module.exports = {
-    strToJson,
-    jsonToStr,
-    replaceStars
 };
