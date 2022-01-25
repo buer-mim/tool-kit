@@ -77,7 +77,7 @@
 
 **示例** <br/>
 #``` const copy = {id:'1',colors:{red:1}}; #```<br/>
-#``` deepCopy(copy); // {id:'1',colors:{red:1}} #```<br/>
+#``` deepCopy(copy); // {id:'1',colors:{red:1}} #```
 
 
 
@@ -88,7 +88,7 @@
 >+ @param1 <object> json
 
 **示例** <br/>
-#``` jsonToStr({id: 1,name: 2}); // id=1&name=2 #```<br/>
+#``` jsonToStr({id: 1,name: 2}); // id=1&name=2 #```
 
 
 
@@ -99,4 +99,4 @@
 >+ @param1 <string> str
 
 **示例** <br/>
-#``` strToJson('id=1&name=2'); // {id: 1,name: 2} #```<br/>
+#``` strToJson('id=1&name=2'); // {id: 1,name: 2} #```
