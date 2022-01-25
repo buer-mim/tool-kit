@@ -9,8 +9,9 @@ function db(n){
     return n.toString()[1] ? n : '0' + n;
 };
 const formatDate = (data, type) => {
+    const time = data || new Date().getTime();
     const f = !type ? "yyyy-MM-dd hh:mm:ss" : type;
-    let date = typeof data === 'string' ? new Date(data.replace(/-/g, "/")) : new Date(data);
+    let date = typeof time === 'string' ? new Date(time.replace(/-/g, "/")) : new Date(time);
     const mode = {
         yyyy: date.getFullYear(),
         MM: db(date.getMonth() + 1),
