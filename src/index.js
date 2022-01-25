@@ -3,8 +3,9 @@ import { encrypt, decrypt } from "./modules/webSecurity";
 import { strToJson, jsonToStr, replaceStars } from "./modules/stringOperation";
 import { arrRepeat, arrDelayer } from "./modules/arrOperation";
 import { deepCopy } from "./modules/deepCopy";
+import { isObject, isArr, isStr } from "./modules/util";
 
-const toolKit = {
+export {
     formatDate,
     encrypt,
     decrypt,
@@ -13,7 +14,8 @@ const toolKit = {
     replaceStars,
     arrRepeat,
     arrDelayer,
-    deepCopy
+    deepCopy,
+    isObject,
+    isArr,
+    isStr
 };
-
-// module.exports = toolKit;
